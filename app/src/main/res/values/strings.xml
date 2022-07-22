@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LoginApplication</string>
+    <string name="login_title">Login</string>
+    <string name="login_username">Enter email</string>
+    <string name="login_password">Enter Password</string>
+    <string name="forgot_password">Forgot Password</string>
 </resources>
