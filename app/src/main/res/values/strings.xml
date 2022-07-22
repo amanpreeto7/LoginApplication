@@ -4,4 +4,8 @@
     <string name="login_username">Enter email</string>
     <string name="login_password">Enter Password</string>
     <string name="forgot_password">Forgot Password</string>
+    <string name="please_enter_name">Please enter name</string>
+    <string name="please_enter_password">Please enter password</string>
+    <string name="login_successfully">Login Successfully</string>
+    <string name="enter_phone">Enter Phone</string>
 </resources>

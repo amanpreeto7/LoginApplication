@@ -7,7 +7,18 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="@dimen/margin_100dp"
+        android:layout_height="@dimen/margin_100dp"
+        android:id="@+id/ivAdd"
+        android:src="@drawable/ic_add"/>
+
     <TextView
+        android:drawableLeft="@drawable/ic_add"
+        android:drawableBottom="@drawable/ic_add"
+        android:drawableRight="@drawable/ic_add"
+        android:drawableTop="@drawable/ic_add"
+        android:drawablePadding="@dimen/margin_10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -18,33 +29,51 @@
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="1dp"
+        android:layout_marginHorizontal="10dp"
         android:layout_marginTop="30dp"
         android:hint="@string/login_username"
         android:textSize="26sp"
         />
     <EditText
+        android:layout_marginHorizontal="10dp"
+
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/login_password"
-        android:layout_marginLeft="1dp"
         android:layout_marginTop="16dp"
         android:textSize="26sp"
         android:inputType="textPassword"
         />
+    <EditText
+        android:id="@+id/etPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_phone"
+        android:layout_marginLeft="1dp"
+        android:digits="0123456789"
+        android:maxLength="10"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="26sp"
+        android:inputType="phone"
+        />
     <TextView
         android:gravity="end"
+        android:padding="@dimen/margin_10dp"
         android:id="@+id/tvForgotPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="10dp"
+
         android:text="@string/forgot_password"
         android:textColor="#26428b"
         />
 
     <Button
         android:id="@+id/btnLogin"
+        android:layout_marginHorizontal="@dimen/margin_10dp"
+            android:textColor="#cc0000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/purple_500"
