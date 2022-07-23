@@ -8,4 +8,11 @@
     <string name="please_enter_password">Please enter password</string>
     <string name="login_successfully">Login Successfully</string>
     <string name="enter_phone">Enter Phone</string>
+    <string name="enter_gender">Enter Gender</string>
+    <string name="others">Other</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="notification_clicked">Notification clicked</string>
+    <string name="he">He</string>
+    <string name="she">She</string>
 </resources>

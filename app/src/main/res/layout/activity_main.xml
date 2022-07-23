@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+<ImageView
 
-    <ImageView
-        android:layout_width="@dimen/margin_100dp"
-        android:layout_height="@dimen/margin_100dp"
-        android:id="@+id/ivAdd"
-        android:src="@drawable/ic_add"/>
+    android:id="@+id/ivNotification"
+    android:layout_width="@dimen/margin_100dp"
+    android:layout_height="@dimen/margin_100dp"
+    android:src="@drawable/activity_lifecycle"/>
 
     <TextView
-        android:drawableLeft="@drawable/ic_add"
-        android:drawableBottom="@drawable/ic_add"
-        android:drawableRight="@drawable/ic_add"
-        android:drawableTop="@drawable/ic_add"
+        android:drawableTop="@drawable/ic_notification"
+        android:drawableEnd="@drawable/ic_notification"
+        android:drawableStart="@drawable/ic_notification"
+        android:drawableBottom="@drawable/ic_notification"
         android:drawablePadding="@dimen/margin_10dp"
+        android:drawableTint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -32,6 +37,8 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="30dp"
         android:hint="@string/login_username"
+        android:inputType="textEmailAddress"
+        android:digits="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM "
         android:textSize="26sp"
         />
     <EditText
@@ -81,4 +88,35 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         />
+<RadioGroup
+    android:id="@+id/rgGender"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+ <RadioButton
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:id="@+id/rbHe"
+     android:layout_weight="1"
+     android:text="@string/he"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rbShe"
+        android:layout_weight="1"
+        android:text="@string/she"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rbOther"
+        android:layout_weight="1"
+        android:text="@string/others"/>
+</RadioGroup>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etOtherName"
+        android:hint="@string/enter_gender"
+        android:visibility="invisible"/>
 </LinearLayout>
+</ScrollView>
