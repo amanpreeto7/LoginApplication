@@ -15,4 +15,6 @@
     <string name="notification_clicked">Notification clicked</string>
     <string name="he">He</string>
     <string name="she">She</string>
+    <string name="enter_email">Enter email</string>
+    <string name="error">Error</string>
 </resources>

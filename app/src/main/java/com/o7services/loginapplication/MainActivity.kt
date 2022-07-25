@@ -37,6 +37,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        //textview forget password started 25th July, 2022
+
+        tvForgotPassword.setOnClickListener {
+            var intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
+        //textview forget password ended
+
         //radio group and button started 23 July, 2022
         rbHe = findViewById(R.id.rbHe)
         rbShe = findViewById(R.id.rbShe)
