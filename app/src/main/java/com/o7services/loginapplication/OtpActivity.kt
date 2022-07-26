@@ -14,6 +14,7 @@ class OtpActivity : AppCompatActivity() {
         intent?.let { abc->
             if(abc.hasExtra("email"))
             email = abc.getStringExtra("email") as String
+
         }?:kotlin.run {  }
         tvEmail = findViewById(R.id.tvEmail)
 

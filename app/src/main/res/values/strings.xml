@@ -17,4 +17,9 @@
     <string name="she">She</string>
     <string name="enter_email">Enter email</string>
     <string name="error">Error</string>
+    <string name="logo_image">Logo image</string>
+    <string name="text_1">Text 1</string>
+    <string name="text_2">Text 2</string>
+    <string name="text_3">Text 3</string>
+    <string name="text_4">Text 4</string>
 </resources>
