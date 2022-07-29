@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent=".10"
+        android:orientation="vertical"
+        android:id="@+id/guide_h_10"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent=".90"
+        android:orientation="vertical"
+        android:id="@+id/guide_h_90"/>
+
+    <ImageView
+        android:id="@+id/ivOne"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/ivTwo"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/guide_h_10"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/ivTwo"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/ivOne"
+        app:layout_constraintEnd_toStartOf="@id/ivThree"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/ivThree"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/ivTwo"
+        app:layout_constraintEnd_toEndOf="@id/guide_h_90"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/ivFour"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/ivOne"
+        app:layout_constraintEnd_toStartOf="@id/ivThree"
+        app:layout_constraintTop_toBottomOf="@id/ivOne"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/ivFive"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/ivFour"
+        app:layout_constraintTop_toBottomOf="@id/ivOne"/>
+
+    <TextView
+        android:id="@+id/tvOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="@dimen/margin_30sp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        app:layout_constraintStart_toStartOf="@id/guide_h_10"
+        app:layout_constraintTop_toBottomOf="@+id/barrier" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="ivFour, ivFive"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
