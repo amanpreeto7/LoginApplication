@@ -10,7 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginApplication">
         <activity
-            android:name=".navHost.NavHostActivity"
+            android:name=".BottomNavigationActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".AlertDialogActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +24,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".navHost.NavHostActivity"
+            android:exported="true"></activity>
+        <activity
             android:name=".FragmentActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ConstraintActivity"
             android:exported="true" />
@@ -30,7 +37,7 @@
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".OtpActivity"
             android:exported="false" />

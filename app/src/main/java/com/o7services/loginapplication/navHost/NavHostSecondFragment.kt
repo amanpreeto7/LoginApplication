@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.o7services.loginapplication.R
 import com.o7services.loginapplication.databinding.FragmentNavHostFirstBinding
 import com.o7services.loginapplication.databinding.FragmentNavHostSecondBinding
@@ -40,6 +41,13 @@ class NavHostSecondFragment : Fragment() {
             binding.tv.setText(testingValue)
         }
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.tv.setOnClickListener {
+            findNavController().navigate(R.id.action_navHostSecondFragment_to_thirdFragment)
+        }
     }
 
 
