@@ -10,10 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginApplication">
         <activity
-            android:name=".BottomNavigationActivity"
+            android:name=".list.ListFragmentActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".BottomNavigationActivity"
+            android:exported="true"></activity>
         <activity
             android:name=".AlertDialogActivity"
             android:exported="true">
@@ -25,7 +32,7 @@
         </activity>
         <activity
             android:name=".navHost.NavHostActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".FragmentActivity"
             android:exported="true" />
