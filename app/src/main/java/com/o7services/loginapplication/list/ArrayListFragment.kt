@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ListView
 import androidx.fragment.app.ListFragment
 import com.o7services.loginapplication.R
 import com.o7services.loginapplication.databinding.FragmentArrayListBinding
@@ -50,15 +51,22 @@ class ArrayListFragment : ListFragment() {
         arrayList.add("qwerty 3")
         arrayList.add("qwerty 4")
         arrayList.add("qwerty 5")
-
-        binding.list.setOnItemClickListener { adapterView, view, i, l ->
-            System.out.println("i $i l $l")
-            Log.e("TAG", " list clicked $i $l")
-        }
-
         binding.list.adapter  = adapter
 
+
+        //use this when fragment is extended
+        binding.list.setOnItemClickListener { adapterView, view, i, l ->
+            System.out.println("i $i l $l")
+        }
+
         return binding.root
+    }
+
+    //use this when the ListFragment is implemented
+    override fun onListItemClick(l: ListView, v: View, position: Int, id: Long) {
+        super.onListItemClick(l, v, position, id)
+        System.out.println("position $position l $l")
+
     }
 
     companion object {
