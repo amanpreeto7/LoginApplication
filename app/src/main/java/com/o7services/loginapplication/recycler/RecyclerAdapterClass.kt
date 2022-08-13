@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.o7services.loginapplication.R
+import com.o7services.loginapplication.list.BaseAdapterDataClass
 
-class RecyclerAdapterClass:RecyclerView.Adapter<RecyclerAdapterClass.ViewHolder>()   {
+class RecyclerAdapterClass(var array: ArrayList<BaseAdapterDataClass> ) :RecyclerView.Adapter<RecyclerAdapterClass.ViewHolder>()   {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -26,10 +27,14 @@ class RecyclerAdapterClass:RecyclerView.Adapter<RecyclerAdapterClass.ViewHolder>
     }
 
     override fun onBindViewHolder(holder: RecyclerAdapterClass.ViewHolder, position: Int) {
+        holder.tvId.setText(array.get(position).id.toString())
+        holder.tvName.setText(array.get(position).name.toString())
+        holder.tvRollNno.setText(array.get(position).rollNo.toString())
+        System.out.println("in bind view holder $position")
+
     }
 
     override fun getItemCount(): Int {
-
-        return 5
+        return array.size
     }
 }
