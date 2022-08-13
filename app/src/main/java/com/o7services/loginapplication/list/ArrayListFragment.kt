@@ -1,5 +1,6 @@
 package com.o7services.loginapplication.list
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -26,6 +27,7 @@ class ArrayListFragment : ListFragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var sharedPreferences: SharedPreferences
     private lateinit var binding: FragmentArrayListBinding
     var arrayList : ArrayList<String> = ArrayList()
     lateinit var listFragmentActivity: ListFragmentActivity
@@ -36,6 +38,7 @@ class ArrayListFragment : ListFragment() {
             param2 = it.getString(ARG_PARAM2)
         }
         listFragmentActivity = activity as ListFragmentActivity
+
     }
 
     override fun onCreateView(
