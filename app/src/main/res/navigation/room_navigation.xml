@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/room_navigation.xml"
+    app:startDestination="@id/notesListFragment">
+
+    <fragment
+        android:id="@+id/notesListFragment"
+        android:name="com.o7services.loginapplication.room.NotesListFragment"
+        android:label="NotesListFragment" />
+    <fragment
+        android:id="@+id/addUpdateNotesFragment"
+        android:name="com.o7services.loginapplication.room.AddUpdateNotesFragment"
+        android:label="AddUpdateNotesFragment" />
+</navigation>
