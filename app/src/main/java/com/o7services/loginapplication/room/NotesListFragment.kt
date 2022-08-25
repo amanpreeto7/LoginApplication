@@ -1,5 +1,6 @@
 package com.o7services.loginapplication.room
 
+import android.os.AsyncTask
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,7 +21,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [NotesListFragmen.newInstance] factory method to
  * create an instance of this fragment.
  */
-class NotesListFragment : Fragment() {
+class NotesListFragment : Fragment(), clickInterface {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -48,10 +49,33 @@ class NotesListFragment : Fragment() {
             roomActivity.navController.navigate(R.id.addUpdateNotesFragment)
         }
 
-        roomRecycler = RoomRecycler(arrayList)
+        roomRecycler = RoomRecycler(arrayList, this)
         binding.recyclerView.layoutManager = LinearLayoutManager(roomActivity)
         binding.recyclerView.adapter = roomRecycler
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        getNotes()
+    }
+
+    private fun getNotes() {
+        arrayList.clear()
+        class getNotes: AsyncTask<Void,Void,Void>(){
+            override fun doInBackground(vararg p0: Void?): Void? {
+                 arrayList.addAll(NotesDatabase.getDatabase(roomActivity).userDao().getAll())
+                return null
+            }
+
+            override fun onPostExecute(result: Void?) {
+                super.onPostExecute(result)
+                roomRecycler.notifyDataSetChanged()
+            }
+        }
+
+        getNotes().execute()
     }
 
     companion object {
@@ -72,5 +96,20 @@ class NotesListFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun ClickInterface(notes: Notes) {
+        class deleteNotes :AsyncTask<Notes, Void, Void>(){
+            override fun doInBackground(vararg p0: Notes?): Void? {
+                p0.get(0)?.let { NotesDatabase.getDatabase(roomActivity).userDao().deleteNotes(it) }
+                return null
+            }
+
+            override fun onPostExecute(result: Void?) {
+                super.onPostExecute(result)
+                getNotes()
+            }
+        }
+        deleteNotes().execute(notes)
     }
 }

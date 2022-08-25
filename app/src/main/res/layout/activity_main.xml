@@ -124,6 +124,19 @@
         android:id="@+id/etOtherName"
         android:hint="@string/enter_gender"
         android:visibility="invisible"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDate"
+        android:text="@string/enter_date">
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTime"
+        android:text="@string/enter_time">
+    </TextView>
 </LinearLayout>
 </ScrollView>
 </layout>

@@ -1,8 +1,6 @@
 package com.o7services.loginapplication.room
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface NotesDao {
@@ -11,4 +9,10 @@ interface NotesDao {
 
     @Query("SELECT * FROM notes")
     fun getAll(): List<Notes>
+
+    @Delete
+    fun deleteNotes(vararg notes: Notes)
+
+    @Update
+    fun updateNotes(vararg notes:Notes)
 }

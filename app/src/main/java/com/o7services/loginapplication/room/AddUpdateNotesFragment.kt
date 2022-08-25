@@ -71,7 +71,6 @@ class AddUpdateNotesFragment : Fragment() {
             override fun onPostExecute(result: Void?) {
                 super.onPostExecute(result)
                 Toast.makeText(roomActivity, resources.getString(R.string.data_saved), Toast.LENGTH_SHORT).show()
-
             }
         }
         saveNote().execute()

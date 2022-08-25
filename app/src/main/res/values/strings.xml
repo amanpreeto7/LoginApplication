@@ -32,4 +32,7 @@
     <string name="save">Save</string>
     <string name="date">Date</string>
     <string name="data_saved">Data saved</string>
+    <string name="delete">Delete</string>
+    <string name="enter_date">Enter date</string>
+    <string name="enter_time">Enter time</string>
 </resources>

@@ -7,11 +7,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.o7services.loginapplication.R
 
-class RoomRecycler(var arrayList: ArrayList<Notes>) : RecyclerView.Adapter<RoomRecycler.ViewHolder>() {
+class RoomRecycler(var arrayList: ArrayList<Notes>, var clickInterface: clickInterface) : RecyclerView.Adapter<RoomRecycler.ViewHolder>() {
     class ViewHolder(var view: View): RecyclerView.ViewHolder(view) {
         var tvDate = view.findViewById<TextView>(R.id.tvDate)
         var tvTitle = view.findViewById<TextView>(R.id.tvTitle)
         var tvDescription = view.findViewById<TextView>(R.id.tvDescription)
+        var tvDelete = view.findViewById<TextView>(R.id.tvDelete)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -23,6 +24,9 @@ class RoomRecycler(var arrayList: ArrayList<Notes>) : RecyclerView.Adapter<RoomR
         holder.tvDate.setText(arrayList[position].date)
         holder.tvTitle.setText(arrayList[position].title)
         holder.tvDescription.setText(arrayList[position].description)
+        holder.tvDelete.setOnClickListener {
+            clickInterface.ClickInterface(arrayList[position])
+        }
     }
 
     override fun getItemCount(): Int {

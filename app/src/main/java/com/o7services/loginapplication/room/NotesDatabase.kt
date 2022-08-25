@@ -10,8 +10,7 @@ abstract class NotesDatabase() : RoomDatabase(){
     abstract fun userDao(): NotesDao
 
     companion object{
-        lateinit var notesDatabase: NotesDatabase
-
+        var notesDatabase: NotesDatabase ?= null
         @Synchronized
         fun getDatabase(context: Context): NotesDatabase{
             if(notesDatabase == null){
@@ -20,7 +19,7 @@ abstract class NotesDatabase() : RoomDatabase(){
                      NotesDatabase::class.java, "notes"
                  ).build()
             }
-            return notesDatabase
+            return notesDatabase!!
         }
     }
 
